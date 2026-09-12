@@ -1,0 +1,91 @@
+{
+  "_instructions": "本文件是行业接入四件套之一。域 ID 一经分配不复用。填完跑平台侧校验器自测。",
+  "profile_version": "domain/1.0",
+  "domain_id": "law",
+  "domain_name": "法律 · 电子证据",
+  "operator": {
+    "org": "待认领 — 本域开放给具备资质的运营方",
+    "contact": "见 README 的「认领方式」",
+    "agent_card": "https://SynomosAI.github.io/.well-known/agent-card.json"
+  },
+  "attributes": [
+    {
+      "key": "law.evidence_authenticity",
+      "type": "enum",
+      "values": [
+        "verified",
+        "unverified",
+        "disputed",
+        "refuted"
+      ],
+      "issuer_required": true,
+      "ttl_days": 180,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    },
+    {
+      "key": "law.evidence_legality",
+      "type": "enum",
+      "values": [
+        "lawful",
+        "unlawful",
+        "pending_review"
+      ],
+      "issuer_required": true,
+      "ttl_days": 180,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    },
+    {
+      "key": "law.evidence_relevance",
+      "type": "enum",
+      "values": [
+        "direct",
+        "indirect",
+        "irrelevant"
+      ],
+      "issuer_required": false,
+      "ttl_days": 180,
+      "assurance_min": "self-declared",
+      "visibility_default": "private"
+    },
+    {
+      "key": "law.evidence_integrity",
+      "type": "enum",
+      "values": [
+        "complete",
+        "partial",
+        "tampered",
+        "unverifiable"
+      ],
+      "issuer_required": true,
+      "ttl_days": 180,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    },
+    {
+      "key": "law.chain_of_custody",
+      "type": "enum",
+      "values": [
+        "documented",
+        "incomplete",
+        "broken",
+        "absent"
+      ],
+      "issuer_required": true,
+      "ttl_days": 365,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    }
+  ],
+  "checker_endpoint": "mcp://pending-claim/law-checker",
+  "gate_map_ref": "./gate-map.json",
+  "privacy_ref": "./privacy.json",
+  "red_lines": [
+    "不对证据的真实性或可采性作终局认定——采信与否属司法机关职权",
+    "不生成替代司法鉴定、公证或法院认定的结论性意见",
+    "保管链断裂或完整性存疑时，不得输出「证据充分」类表述"
+  ],
+  "valid_from": "2026-09-12",
+  "status": "RESERVED"
+}
