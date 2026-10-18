@@ -1,0 +1,21 @@
+# evid-four-check
+
+> 法律 · 电子证据域配置包：把电子数据四性（真实性/合法性/关联性/完整性）审查拆成可核验属性，AI 只做检索提示，不做采信认定。
+
+`evid-four-check` 是 SynomosAI 平台「行业接入四件套」的一个域骨架（RESERVED，开放认领）。域 ID `law`，覆盖证据真实性、合法性、关联性、完整性与保管链五个属性。核验器（MCP 工具）只出示与核验出处链，不下专业判定。
+
+## 核心
+
+- [README.md](https://github.com/SynomosAI/evid-four-check/blob/main/README.md): 域说明、属性清单、红线、认领方式
+- [domain.manifest.json](https://github.com/SynomosAI/evid-four-check/blob/main/domain.manifest.json): 本域声明（属性 / 签发方 / 红线）
+- [gate-map.json](https://github.com/SynomosAI/evid-four-check/blob/main/gate-map.json): 动作摩擦级别与阻断规则
+- [privacy.json](https://github.com/SynomosAI/evid-four-check/blob/main/privacy.json): 隐私声明（默认关闭 / 可撤回 / 可删除）
+- [checker.io.json](https://github.com/SynomosAI/evid-four-check/blob/main/checker.io.json): MCP 核验器输入输出契约
+
+## 可选
+
+- [llms-full.txt](https://github.com/SynomosAI/evid-four-check/blob/main/llms-full.txt): 完整文本
+- [AGENTS.md](https://github.com/SynomosAI/evid-four-check/blob/main/AGENTS.md): 给 AI Agent 的工作指引
+- [SECURITY.md](https://github.com/SynomosAI/evid-four-check/blob/main/SECURITY.md): 安全策略
+- [README.en.md](https://github.com/SynomosAI/evid-four-check/blob/main/README.en.md): 英文版说明
+- [LICENSE](https://github.com/SynomosAI/evid-four-check/blob/main/LICENSE): MIT License
