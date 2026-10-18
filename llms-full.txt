@@ -1,0 +1,50 @@
+# evid-four-check — 完整文本
+
+本文件为 llms.txt 标准的「完整版」，供长上下文模型一次性读取本仓库的完整说明。
+
+## 这是什么
+
+`evid-four-check` 是 SynomosAI 平台「行业接入四件套」的一个域骨架，域 ID `law`（法律 · 电子证据），当前状态 RESERVED（占位，开放给具备资质的运营方认领）。它不是可运行的 SDK，而是一份机器可读的域配置声明。
+
+一句话：把电子数据的「四性」审查拆成可核验的属性，AI 只做检索与提示，不做采信认定。
+
+## 解决什么问题
+
+1. 电子证据是否被采信是司法机关职权，AI 容易越权下结论。
+2. 电子证据的真实性、合法性、关联性、完整性四个维度需要分别核验。
+3. 平台需要一份机器可读的域声明，让每条红线都有对应的阻断规则覆盖。
+
+## 五个属性
+
+- `law.evidence_authenticity`：真实性（verified/unverified/disputed/refuted）
+- `law.evidence_legality`：合法性（lawful/unlawful/pending_review）
+- `law.evidence_relevance`：关联性（direct/indirect/irrelevant）
+- `law.evidence_integrity`：完整性（complete/partial/tampered/unverifiable）
+- `law.chain_of_custody`：保管链（documented/incomplete/broken/absent）
+
+## 三条红线（机器可读，对应 gate-map.json 阻断规则）
+
+1. 不对证据的真实性或可采性作终局认定——采信与否属司法机关职权
+2. 不生成替代司法鉴定、公证或法院认定的结论性意见
+3. 保管链断裂或完整性存疑时，不得输出「证据充分」类表述
+
+## 快速开始
+
+```bash
+git clone https://github.com/SynomosAI/evid-four-check.git
+cd evid-four-check
+cat domain.manifest.json   # 查看本域声明
+cat checker.io.json       # 查看 MCP 核验器契约
+```
+
+## 触发词
+
+电子证据四性 / 证据真实性 / 证据合法性 / 证据关联性 / 证据完整性 / 保管链 / chain of custody / domain profile / MCP checker / 可核验属性。
+
+## 许可与权利
+
+代码与配置按 MIT 许可使用（© 2026 SynomosAI）。文档的知识版权归 SynomosAI 所有。完整条款见 LICENSE。
+
+## 链接
+
+- 仓库: https://github.com/SynomosAI/evid-four-check
